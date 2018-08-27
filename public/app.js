@@ -1,19 +1,19 @@
 $(function () {
     console.log("**************** we made it in the function")
-    $(".eaton").on("click", function (event) {
+    $(".eaten").on("click", function (event) {
         var id = $(this).data("id");
-        var newEaton = $(this).data("newEaten");
+        var newEaten = $(this).data("neweaten");
 
-        var newEatonState = {
-            devoured: newEaton
+        var newEatenState = {
+            devoured: newEaten
         };
 
-        $.ajax("/api/burgerss/" + id, {
+        $.ajax("/api/burgers/" + id, {
             type: "PUT",
-            data: newEatonState
+            data: newEatenState
         }).then(
             function () {
-                console.log("Eat staus", newEaton);
+                console.log("Eat staus", newEaten);
                 location.reload();
             }
         );
